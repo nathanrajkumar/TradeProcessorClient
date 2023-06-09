@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Account</th>
+      <th>idSource</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of tradeDataMessages$ | async">
+      <td *ngIf="message.qty !== null">{{message.qty}}</td>
+      <td *ngIf="message.qty == null">No Quantity Found on Message</td>
+      <td *ngIf="message.account !== null">{{message.account}}</td>
+      <td *ngIf="message.account == null">No Account Found on Message</td>
+      <td *ngIf="message.idSource !== null">{{message.idSource}}</td>
+      <td *ngIf="message.idSource == null">No ID Source Found on Message</td>
+      <td>{{message.lastUpdated}}</td>
+    </tr>
+  </tbody>
+</table>
